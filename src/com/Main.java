@@ -1,7 +1,6 @@
 package com;
 
 import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.ParseException;
 
 import java.util.ArrayList;
 
@@ -27,17 +26,12 @@ public class Main {
 
 
         ParsResult pare = new Pars().parsing(args); // pare - pars result
-        System.out.println(pare.getLogin());
-        if (pare.isAuthentication()){
+        if (pare.isAuthentication()) {
             authentication = true;
-        }
-        else
-        if (pare.isAuthorization()) {
+        } else if (pare.isAuthorization()) {
             authentication = true;
             authorization = true;
-        }
-        else
-        if (pare.isAccounting()){
+        } else if (pare.isAccounting()) {
             authentication = true;
             authorization = true;
             accounting = true;
@@ -45,8 +39,7 @@ public class Main {
 
         if (getAuthentication()) {
             Check.checkAuthentication(users, roles, pare);
-        }
-        else help();
+        } else help();
 
     }
 
@@ -67,4 +60,4 @@ public class Main {
     public static boolean getAccounting() {
         return accounting;
     }
-    }
+}

@@ -11,7 +11,7 @@ public class Pars {
     public Pars() {
         options.addOption(new Option("l", "login", true, "login"))
                 .addOption(new Option("p", "password", true, "password"))
-                .addOption(new Option("res", "resource", true, "resource"))
+                .addOption(new Option("pt", "path", true, "path"))
                 .addOption(new Option("rol", "role", true, "role"))
                 .addOption(new Option("ds", "date-start", true, "date start (YYYY-MM-DD)"))
                 .addOption(new Option("de", "date-end", true, "date end (YYYY-MM-DD)"))
@@ -39,8 +39,8 @@ public class Pars {
         if (cmdLine.hasOption("p")) {
             pass = cmdLine.getOptionValue("p");
         }
-        if (cmdLine.hasOption("res")) {
-            res = cmdLine.getOptionValue("res");
+        if (cmdLine.hasOption("pt")) {
+            res = cmdLine.getOptionValue("pt");
         }
         if (cmdLine.hasOption("rol")) {
             role = cmdLine.getOptionValue("rol");
