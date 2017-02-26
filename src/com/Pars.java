@@ -6,7 +6,7 @@ import org.apache.commons.cli.*;
  * Created by Миша on 26.02.2017.
  */
 public class Pars {
-    private Options options = new Options();
+    public Options options = new Options();
 
     public Pars() {
         options.addOption(new Option("l", "login", true, "login"))
@@ -19,7 +19,7 @@ public class Pars {
                 .addOption(new Option("h", "help", false, "help")); //добавляем опции для последующего парсинга
     }
 
-    void parsing(String[] args) throws ParseException {
+    ParsResult parsing(String[] args) throws ParseException {
         String login = "";
         String pass = "";
         String res = "";
@@ -55,6 +55,8 @@ public class Pars {
             volume = cmdLine.getOptionValue("v");
         }
         ParsResult pr = new ParsResult (login, pass, res, role, date_start, date_end, volume);
+
+        return pr;
     }
 
 
