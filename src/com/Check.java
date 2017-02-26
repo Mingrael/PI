@@ -29,6 +29,7 @@ public class Check {
             System.exit(1);
         }
 
+        pass = Hash.hash(Hash.hash(pass) + curUser.getSalt());
         if (!curUser.getPass().equals(pass)) {
             System.out.printf("Wrong password");
             System.exit(2);

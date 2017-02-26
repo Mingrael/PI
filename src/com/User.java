@@ -1,18 +1,21 @@
 package com;
 
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Created by Миша on 26.02.2017.
  */
 public class User {
 
     int id;
-    String name, login, pass;
+    String name, login, pass, salt;
 
-    public User(int id, String name, String login, String pass) {
+    public User(int id, String name, String login, String pass) throws NoSuchAlgorithmException {
         this.id = id;
         this.name = name;
         this.login = login;
-        this.pass = pass;
+        this.salt = Hash.salt();
+        this.pass = Hash.hash(Hash.hash(pass) + salt);
     }
 
     public User(User u) {
@@ -20,6 +23,7 @@ public class User {
         this.name = u.name;
         this.login = u.login;
         this.pass = u.pass;
+        this.salt = u.salt;
     }
 
     public int getId() {
@@ -52,5 +56,13 @@ public class User {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 }
