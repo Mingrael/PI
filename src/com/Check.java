@@ -16,10 +16,7 @@ public class Check   {
 
         for (User u : users) {
             if (u.getLogin().equals(login)) {
-                curUser.setId(999);
-                curUser.setName(u.getName());
-                curUser.setLogin(u.getLogin());
-                curUser.setPass(u.getPass());
+                curUser = new User(u);
                 break;
             }
         }
@@ -33,6 +30,5 @@ public class Check   {
             System.out.printf("Wrong password");
             System.exit(2);
         }
-
     }
 }

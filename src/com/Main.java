@@ -14,7 +14,7 @@ public class Main {
     private static boolean authorization = false;
     private static boolean accounting = false;
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws Throwable {
         ArrayList<User> users = new ArrayList<>();
         users.add(new User(1, "John Doe", "jdoe", "sup3rpaZZ"));
         users.add(new User(2, "Jane Row", "jrow", "Qweqrty12"));
@@ -27,6 +27,7 @@ public class Main {
 
 
         ParsResult pare = new Pars().parsing(args); // pare - pars result
+        System.out.println(pare.getLogin());
         if (pare.isAuthentication()){
             authentication = true;
         }
@@ -67,4 +68,3 @@ public class Main {
         return accounting;
     }
     }
-}

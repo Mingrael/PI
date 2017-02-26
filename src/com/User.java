@@ -16,6 +16,14 @@ public class User {
         this.pass = pass;
     }
 
+    public User(User u)
+    {
+        this.id = u.id;
+        this.name = u.name;
+        this.login = u.login;
+        this.pass = u.pass;
+    }
+
     public int getId() {
         return id;
     }

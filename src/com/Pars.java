@@ -20,13 +20,13 @@ public class Pars {
     }
 
     ParsResult parsing(String[] args) throws ParseException {
-        String login = "";
-        String pass = "";
-        String res = "";
-        String role = "";
-        String date_start = "";
-        String date_end = "";
-        String volume = "";
+        String login = null;
+        String pass = null;
+        String res = null;
+        String role = null;
+        String date_start = null;
+        String date_end = null;
+        String volume = null;
 
         CommandLineParser cmdLineParser = new DefaultParser();
         //CommandLineParser - тип данных, DefaultParser - тип парсера. задаём парсер
