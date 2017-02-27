@@ -33,7 +33,7 @@ public class Pars {
         CommandLine cmdLine = cmdLineParser.parse(options, args);
         //Комнадлайн - тип данных, парс - функция (массив опций, строка аргументов), цмдлайн - разбитая строка. получаем результаты парсинга
 
-        if (cmdLine.hasOption("l")) {//хэзопшн- проверяет наличие опции
+        if (cmdLine.hasOption("l")) {//хэзопшн- проверяет наличие опции. Получаем значение по ключу
             login = cmdLine.getOptionValue("l"); //помещаем в класс значение опции, соответствующей ключу -l
         }
         if (cmdLine.hasOption("p")) {
@@ -54,7 +54,7 @@ public class Pars {
         if (cmdLine.hasOption("v")) {
             volume = cmdLine.getOptionValue("v");
         }
-        ParsResult pr = new ParsResult (login, pass, res, role, date_start, date_end, volume);
+        ParsResult pr = new ParsResult (login, pass, res, role, date_start, date_end, volume); //собираем результаты парсинга в класс и возвращает это значение
 
         return pr;
     }

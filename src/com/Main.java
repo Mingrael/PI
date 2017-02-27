@@ -9,9 +9,9 @@ import java.util.ArrayList;
  */
 public class Main {
 
-    private static boolean authentication = false;
-    private static boolean authorization = false;
-    private static boolean accounting = false;
+    public static boolean authentication = false;
+    public static boolean authorization = false;
+    public static boolean accounting = false;
 
     public static void main(String[] args) throws Throwable {
         ArrayList<User> users = new ArrayList<>();
@@ -25,7 +25,8 @@ public class Main {
         roles.add(new Role(4, "EXECUTE", "a.bc", "jdoe"));
 
 
-        ParsResult pare = new Pars().parsing(args); // pare - pars result
+        ParsResult pare = new Pars().parsing(args); // pare - pars result запуск парсинга
+
         if (pare.isAuthentication()) {
             authentication = true;
         } else if (pare.isAuthorization()) {
@@ -37,7 +38,7 @@ public class Main {
             accounting = true;
         }
 
-        if (getAuthentication()) {
+        if (authentication) {
             Check.checkAuthentication(users, roles, pare);
         } else help();
 
@@ -47,17 +48,5 @@ public class Main {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("AAA protocol", new Pars().options);
         System.exit(0);
-    }
-
-    public static boolean getAuthentication() {
-        return authentication;
-    }
-
-    public static boolean getAuthorization() {
-        return authorization;
-    }
-
-    public static boolean getAccounting() {
-        return accounting;
     }
 }
