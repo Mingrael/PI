@@ -2,9 +2,6 @@ package com;
 
 import java.util.Date;
 
-/**
- * Created by Миша on 26.02.2017.
- */
 public class Accounting {
     private int volume;
     private Role role;

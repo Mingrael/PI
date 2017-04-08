@@ -2,7 +2,7 @@ package com;
 
 import java.math.BigInteger;
 import java.security.*;
-//залутаный хэш
+// хэш
 public class Hash {
     public static String hash(String pass) throws NoSuchAlgorithmException {
         MessageDigest messageDigest;

@@ -9,19 +9,9 @@ public class ParsResult {
     String pass;
     String res;
     String role;
-    String date_start;
-    String date_end;
+    String dateStart;
+    String dateEnd;
     String volume;
-
-    public ParsResult(String login, String pass, String res, String role, String date_start, String date_end, String volume) {
-        this.login = login;
-        this.pass = pass;
-        this.res = res;
-        this.role = role;
-        this.date_start = date_start;
-        this.date_end = date_end;
-        this.volume = volume;
-    }
 
     public String getLogin() {
         return login;
@@ -55,20 +45,20 @@ public class ParsResult {
         this.role = role;
     }
 
-    public String getDate_start() {
-        return date_start;
+    public String getDateStart() {
+        return dateStart;
     }
 
-    public void setDate_start(String date_start) {
-        this.date_start = date_start;
+    public void setDateStart(String dateStart) {
+        this.dateStart = dateStart;
     }
 
-    public String getDate_end() {
-        return date_end;
+    public String getDateEnd() {
+        return dateEnd;
     }
 
-    public void setDate_end(String date_end) {
-        this.date_end = date_end;
+    public void setDateEnd(String dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
     public String getVolume() {
@@ -80,25 +70,25 @@ public class ParsResult {
     }
 
     public boolean isAuthentication() {
-        if (this.getLogin() != null && this.getPass() != null
-                && this.getRes() == null && this.getRole() == null && this.getVolume() == null
-                && this.getDate_start() == null && this.getDate_end() == null) {
+        if (this.getLogin()!=null && this.getPass()!=null
+                && this.getRes()==null && this.getRole()==null && this.getVolume()==null
+                && this.getDateStart()==null && this.getDateEnd()==null) {
             return true;
         }
         return false;
     }
 
     public boolean isAuthorization() {
-        if (this.getLogin() != null && this.getPass() != null && this.getRes() != null && this.getRole() != null
-                && this.getVolume() == null && this.getDate_start() == null && this.getDate_end() == null) {
+        if (this.getLogin()!=null && this.getPass()!=null && this.getRes()!=null && this.getRole()!=null
+                && this.getVolume()==null && this.getDateStart()==null && this.getDateEnd()==null) {
             return true;
         }
         return false;
     }
 
     public boolean isAccounting() {
-        if (this.getLogin() != null && this.getPass() != null && this.getRes() != null && this.getRole() != null
-                && this.getVolume() != null && this.getDate_start() != null && this.getDate_end() != null) {
+        if (this.getLogin()!=null && this.getPass()!=null && this.getRes()!=null && this.getRole()!=null
+                && this.getVolume()!=null && this.getDateStart()!=null && this.getDateEnd()!=null) {
             return true;
         }
         return false;

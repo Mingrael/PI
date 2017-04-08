@@ -1,18 +1,15 @@
 package com;
 
-/**
- * Created by Миша on 26.02.2017.
- */
 public class Role {
 
     int id;
-    String role, path, user_login;
+    String role, res, userLogin;
 
-    public Role(int id, String role, String path, String user_login) {
+    public Role(int id, String role, String res, String userLogin) {
         this.id = id;
         this.role = role;
-        this.path = path;
-        this.user_login = user_login;
+        this.res = res;
+        this.userLogin = userLogin;
     }
 
     public int getId() {
@@ -31,19 +28,19 @@ public class Role {
         this.role = role;
     }
 
-    public String getPath() {
-        return path;
+    public String getRes() {
+        return res;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setRes(String res ) {
+        this.res = res;
     }
 
-    public String getUser_login() {
-        return user_login;
+    public String getUserLogin() {
+        return userLogin;
     }
 
-    public void setUser_login(String user_login) {
-        this.user_login = user_login;
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
     }
 }

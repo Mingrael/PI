@@ -4,14 +4,12 @@ import org.apache.commons.cli.HelpFormatter;
 
 import java.util.ArrayList;
 
-/**
- * Created by Миша on 26.02.2017.
- */
+
 public class Main {
 
-    public static boolean authentication = false;
-    public static boolean authorization = false;
-    public static boolean accounting = false;
+    public static boolean isAuthentification = false;
+    public static boolean isAuthorization = false;
+    public static boolean isAccounting = false;
 
     public static void main(String[] args) throws Throwable {
         ArrayList<User> users = new ArrayList<>();
@@ -28,17 +26,17 @@ public class Main {
         ParsResult pare = new Pars().parsing(args); // pare - pars result запуск парсинга
 
         if (pare.isAuthentication()) {
-            authentication = true;
+            isAuthentification = true;
         } else if (pare.isAuthorization()) {
-            authentication = true;
-            authorization = true;
+            isAuthentification = true;
+            isAuthorization = true;
         } else if (pare.isAccounting()) {
-            authentication = true;
-            authorization = true;
-            accounting = true;
+            isAuthentification = true;
+            isAuthorization = true;
+            isAccounting = true;
         }
 
-        if (authentication) {
+        if (isAuthentification) {
             Check.checkAuthentication(users, roles, pare);
         } else help();
 
